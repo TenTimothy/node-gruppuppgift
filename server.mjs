@@ -11,6 +11,11 @@ app.use('/api/v1/blockchain', (req, res, next) => {
     next();
 }, blockchainRouter);
 
+app.all('*', (req, res) => {
+    console.log(`Unhandled request: ${req.method} ${req.originalUrl}`);
+    res.status(404).send('Not Found');
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
