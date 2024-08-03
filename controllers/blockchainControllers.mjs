@@ -11,7 +11,6 @@ export const getBlockchain = (req, res) => {
 };
 
 export const mineBlock = (req, res) => {
-    console.log('Handling POST /api/v1/blockchain/mine');
     const { data } = req.body;
 
     if (!data) {
