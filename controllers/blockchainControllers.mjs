@@ -48,3 +48,14 @@ export const getBlockByIndex = (req, res) => {
         data: block
     });
 };
+
+export const validateBlockchain = (req, res) => {
+    console.log('Handling GET /api/v1/blockchain/validate');
+    const isValid = blockchain.validateChain();
+    res.status(200).json({
+        success: true,
+        valid: isValid
+    });
+};
+
+

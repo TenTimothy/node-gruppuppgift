@@ -27,4 +27,22 @@ export default class Blockchain {
     getChain() {
         return this.chain;
     }
+
+    validateBlock(block, previousBlock) {
+        if (previousBlock.blockIndex + 1 !== block.blockIndex) return false;
+        if (block.previousBlockHash !== previousBlock.currentBlockHash) return false;
+        if (createHash(block.timestamp + block.previousBlockHash + JSON.stringify(block.data)) !== block.currentBlockHash) return false;
+        return true;
+    }
+
+    validateChain() {
+        for (let i = 1; i < this.chain.length; i++) {
+            const currentBlock = this.chain[i];
+            const previousBlock = this.chain[i - 1];
+            if (!this.validateBlock(currentBlock, previousBlock)) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
