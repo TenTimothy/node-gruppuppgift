@@ -1,9 +1,11 @@
 import { createHash } from '../utils/crypto-lib.mjs';
 import Block from './Block.mjs';
+import Transaction from './Transaction.mjs';
 
 export default class Blockchain {
     constructor(chain = []) {
         this.chain = chain.length ? chain : [this.createGenesisBlock()];
+        this.pendingTransactions = [];
     }
 
     createGenesisBlock() {
@@ -26,6 +28,21 @@ export default class Blockchain {
 
     getChain() {
         return this.chain;
+    }
+
+    addTransaction(transaction) {
+        this.pendingTransactions.push(transaction);
+    }
+
+    minePendingTransactions() {
+        const previousBlock = this.getLastBlock();
+        const newBlockIndex = previousBlock.blockIndex + 1;
+        const newBlockTimestamp = Date.now();
+        const newBlockHash = createHash(newBlockTimestamp + previousBlock.currentBlockHash + JSON.stringify(this.pendingTransactions));
+        const newBlock = new Block(newBlockTimestamp, newBlockIndex, previousBlock.currentBlockHash, newBlockHash, this.pendingTransactions);
+        this.chain.push(newBlock);
+        this.pendingTransactions = [];
+        return newBlock;
     }
 
     validateBlock(block, previousBlock) {
