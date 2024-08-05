@@ -1,5 +1,10 @@
 import { Router } from 'express';
-import { getBlockchain, mineBlock, getBlockByIndex, validateBlockchain, addTransaction, minePendingTransactions } from '../controllers/blockchainControllers.mjs';
+import { getBlockchain } from '../controllers/getBlockchain.mjs';
+import { mineBlock } from '../controllers/blockchainControllers.mjs';
+import { getBlockByIndex } from '../controllers/blockchainControllers.mjs';
+import { validateBlockchain } from '../controllers/blockchainControllers.mjs';
+import { addTransaction } from '../controllers/blockchainControllers.mjs';
+import { minePendingTransactions } from '../controllers/blockchainControllers.mjs';
 
 const router = Router();
 
