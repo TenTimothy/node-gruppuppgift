@@ -5,12 +5,11 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Konvertera URL till filväg
+
 const __filename = fileURLToPath(import.meta.url);
-// Få katalogen för den nuvarande filen
+
 const __dirname = path.dirname(__filename);
 
-// Definiera var blockchain-filen ska sparas
 const BLOCKCHAIN_FILE = path.join(__dirname, '../data/blockchainLogs/blockchain.json');
 
 export default class Blockchain {
