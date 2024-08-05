@@ -12,6 +12,9 @@ describe('Blockchain Controller', () => {
             json: vi.fn()
         };
         next = vi.fn();
+
+        
+        global.blockchain = new Blockchain();
     });
 
     it('should return the blockchain', () => {

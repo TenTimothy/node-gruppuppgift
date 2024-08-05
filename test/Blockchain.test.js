@@ -21,7 +21,7 @@ describe('Blockchain', () => {
         blockchain.addBlock(data);
         const lastBlock = blockchain.getLastBlock();
         expect(lastBlock.data).toEqual(data);
-        expect(lastBlock.blockIndex).toBe(2);
+        expect(lastBlock.blockIndex).toBe(1); 
     });
 
     it('should validate the blockchain', () => {

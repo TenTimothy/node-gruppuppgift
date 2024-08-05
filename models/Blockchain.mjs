@@ -32,6 +32,7 @@ export default class Blockchain {
         this.saveBlockchain();
         return newBlock;
     }
+    
 
     getChain() {
         return this.chain;
