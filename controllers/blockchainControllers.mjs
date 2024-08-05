@@ -78,3 +78,13 @@ export const addTransaction = (req, res) => {
         data: transaction
     });
 };
+
+export const minePendingTransactions = (req, res) => {
+    console.log('Handling POST /api/v1/blockchain/mine-transactions');
+    const newBlock = blockchain.minePendingTransactions();
+
+    res.status(201).json({
+        success: true,
+        data: newBlock
+    });
+};
