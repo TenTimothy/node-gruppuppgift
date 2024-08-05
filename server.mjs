@@ -11,7 +11,7 @@ const blockchain = Blockchain.loadBlockchain();
 global.blockchain = blockchain;
 
 app.use('/api/v1/blockchain', (req, res, next) => {
-    console.log('Received request for /api/v1/blockchain');
+    console.log(`Received request for /api/v1/blockchain`);
     next();
 }, blockchainRouter);
 

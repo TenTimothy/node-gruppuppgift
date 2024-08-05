@@ -1,15 +1,11 @@
 import { createHash } from '../utils/crypto-lib.mjs';
 import Block from './Block.mjs';
-import Transaction from './Transaction.mjs';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-
 const __filename = fileURLToPath(import.meta.url);
-
 const __dirname = path.dirname(__filename);
-
 const BLOCKCHAIN_FILE = path.join(__dirname, '../data/blockchainLogs/blockchain.json');
 
 export default class Blockchain {
@@ -58,20 +54,37 @@ export default class Blockchain {
     }
 
     validateBlock(block, previousBlock) {
-        if (previousBlock.blockIndex + 1 !== block.blockIndex) return false;
-        if (block.previousBlockHash !== previousBlock.currentBlockHash) return false;
-        if (createHash(block.timestamp + block.previousBlockHash + JSON.stringify(block.data)) !== block.currentBlockHash) return false;
+        console.log('Validating block:', block);
+        console.log('Previous block:', previousBlock);
+
+        if (previousBlock.blockIndex + 1 !== block.blockIndex) {
+            console.log('Invalid block index:', block.blockIndex);
+            return false;
+        }
+        if (block.previousBlockHash !== previousBlock.currentBlockHash) {
+            console.log('Invalid previous block hash:', block.previousBlockHash);
+            return false;
+        }
+        const recalculatedHash = createHash(block.timestamp + block.previousBlockHash + JSON.stringify(block.data));
+        if (recalculatedHash !== block.currentBlockHash) {
+            console.log('Invalid block hash:', recalculatedHash);
+            return false;
+        }
         return true;
     }
 
     validateChain() {
+        console.log('Starting blockchain validation');
         for (let i = 1; i < this.chain.length; i++) {
             const currentBlock = this.chain[i];
             const previousBlock = this.chain[i - 1];
+            console.log(`Validating block ${i} with previous block ${i - 1}`);
             if (!this.validateBlock(currentBlock, previousBlock)) {
+                console.log(`Block ${i} is invalid`);
                 return false;
             }
         }
+        console.log('Blockchain is valid');
         return true;
     }
 
