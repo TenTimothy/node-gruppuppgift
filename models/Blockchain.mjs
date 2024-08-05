@@ -1,6 +1,17 @@
 import { createHash } from '../utils/crypto-lib.mjs';
 import Block from './Block.mjs';
 import Transaction from './Transaction.mjs';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Konvertera URL till filväg
+const __filename = fileURLToPath(import.meta.url);
+// Få katalogen för den nuvarande filen
+const __dirname = path.dirname(__filename);
+
+// Definiera var blockchain-filen ska sparas
+const BLOCKCHAIN_FILE = path.join(__dirname, '../data/blockchainLogs/blockchain.json');
 
 export default class Blockchain {
     constructor(chain = []) {
@@ -23,6 +34,7 @@ export default class Blockchain {
         const newBlockHash = createHash(newBlockTimestamp + previousBlock.currentBlockHash + JSON.stringify(data));
         const newBlock = new Block(newBlockTimestamp, newBlockIndex, previousBlock.currentBlockHash, newBlockHash, data);
         this.chain.push(newBlock);
+        this.saveBlockchain();
         return newBlock;
     }
 
@@ -42,6 +54,7 @@ export default class Blockchain {
         const newBlock = new Block(newBlockTimestamp, newBlockIndex, previousBlock.currentBlockHash, newBlockHash, this.pendingTransactions);
         this.chain.push(newBlock);
         this.pendingTransactions = [];
+        this.saveBlockchain();
         return newBlock;
     }
 
@@ -61,5 +74,21 @@ export default class Blockchain {
             }
         }
         return true;
+    }
+
+    saveBlockchain() {
+        const dir = path.dirname(BLOCKCHAIN_FILE);
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
+        }
+        fs.writeFileSync(BLOCKCHAIN_FILE, JSON.stringify(this.chain, null, 4));
+    }
+
+    static loadBlockchain() {
+        if (fs.existsSync(BLOCKCHAIN_FILE)) {
+            const chain = JSON.parse(fs.readFileSync(BLOCKCHAIN_FILE, 'utf8'));
+            return new Blockchain(chain);
+        }
+        return new Blockchain();
     }
 }

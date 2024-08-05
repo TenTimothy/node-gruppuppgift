@@ -1,10 +1,14 @@
 import express from 'express';
 import blockchainRouter from './routes/blockchainRoute.mjs';
+import Blockchain from './models/Blockchain.mjs';
 
 const app = express();
 const PORT = 3001;
 
 app.use(express.json());
+
+const blockchain = Blockchain.loadBlockchain();
+global.blockchain = blockchain;
 
 app.use('/api/v1/blockchain', (req, res, next) => {
     console.log('Received request for /api/v1/blockchain');
