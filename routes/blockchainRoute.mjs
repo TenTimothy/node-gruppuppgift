@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getBlockchain, mineBlock, getBlockByIndex, validateBlockchain, addTransaction } from '../controllers/blockchainControllers.mjs';
+import { getBlockchain, mineBlock, getBlockByIndex, validateBlockchain, addTransaction, minePendingTransactions } from '../controllers/blockchainControllers.mjs';
 
 const router = Router();
 
@@ -26,6 +26,11 @@ router.get('/validate', (req, res) => {
 router.post('/transactions', (req, res) => {
     console.log('POST request received at /api/v1/blockchain/transactions');
     addTransaction(req, res);
+});
+
+router.post('/mine-transactions', (req, res) => {
+    console.log('POST request received at /api/v1/blockchain/mine-transactions');
+    minePendingTransactions(req, res);
 });
 
 export default router;
