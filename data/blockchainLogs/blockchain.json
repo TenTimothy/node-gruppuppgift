@@ -18,5 +18,23 @@
                 "amount": 1000000
             }
         ]
+    },
+    {
+        "timestamp": 1722885884408,
+        "blockIndex": 2,
+        "previousBlockHash": "85e864010388951df7afe36e826b1be27db9255c4a34bf1fa2a4de8a65c26900",
+        "currentBlockHash": "c4b15cbf45dcb9885f542f564821dac4b7cdcedfdb993e45861dba63eb158ce1",
+        "data": [
+            {
+                "sender": "Ten",
+                "recipient": "Saba",
+                "amount": 1000000
+            },
+            {
+                "sender": "Mamma",
+                "recipient": "Saba",
+                "amount": 1000000
+            }
+        ]
     }
 ]

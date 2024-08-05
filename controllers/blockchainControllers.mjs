@@ -1,13 +1,11 @@
 import Blockchain from '../models/Blockchain.mjs';
 import Transaction from '../models/Transaction.mjs';
 
-const blockchain = new Blockchain();
-
 export const getBlockchain = (req, res) => {
     console.log('Handling GET /api/v1/blockchain');
     res.status(200).json({
         success: true,
-        data: blockchain.getChain()
+        data: global.blockchain.getChain()
     });
 };
 
@@ -22,7 +20,7 @@ export const mineBlock = (req, res) => {
         });
     }
 
-    const newBlock = blockchain.addBlock(data);
+    const newBlock = global.blockchain.addBlock(data);
 
     res.status(201).json({
         success: true,
@@ -35,14 +33,14 @@ export const getBlockByIndex = (req, res) => {
     const { index } = req.params;
     const blockIndex = parseInt(index, 10);
 
-    if (isNaN(blockIndex) || blockIndex < 0 || blockIndex >= blockchain.getChain().length) {
+    if (isNaN(blockIndex) || blockIndex < 0 || blockIndex >= global.blockchain.getChain().length) {
         return res.status(400).json({
             success: false,
             message: 'Invalid block index'
         });
     }
 
-    const block = blockchain.getChain()[blockIndex];
+    const block = global.blockchain.getChain()[blockIndex];
 
     res.status(200).json({
         success: true,
@@ -52,7 +50,7 @@ export const getBlockByIndex = (req, res) => {
 
 export const validateBlockchain = (req, res) => {
     console.log('Handling GET /api/v1/blockchain/validate');
-    const isValid = blockchain.validateChain();
+    const isValid = global.blockchain.validateChain();
     res.status(200).json({
         success: true,
         valid: isValid
@@ -71,7 +69,7 @@ export const addTransaction = (req, res) => {
     }
 
     const transaction = new Transaction(sender, recipient, amount);
-    blockchain.addTransaction(transaction);
+    global.blockchain.addTransaction(transaction);
 
     res.status(201).json({
         success: true,
@@ -81,7 +79,7 @@ export const addTransaction = (req, res) => {
 
 export const minePendingTransactions = (req, res) => {
     console.log('Handling POST /api/v1/blockchain/mine-transactions');
-    const newBlock = blockchain.minePendingTransactions();
+    const newBlock = global.blockchain.minePendingTransactions();
 
     res.status(201).json({
         success: true,
