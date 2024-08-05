@@ -9,3 +9,14 @@
     at param (/Users/sabatimothy/Desktop/node-gruppuppgift-2/node_modules/express/lib/router/index.js:365:14)
     at param (/Users/sabatimothy/Desktop/node-gruppuppgift-2/node_modules/express/lib/router/index.js:376:14)
     at Function.process_params (/Users/sabatimothy/Desktop/node-gruppuppgift-2/node_modules/express/lib/router/index.js:421:3)
+2024-08-05T21:47:30.295Z - TypeError: next is not a function
+    at getBlockByIndex (file:///Users/sabatimothy/Desktop/node-gruppuppgift-2/controllers/getBlockByIndex.mjs:14:16)
+    at file:///Users/sabatimothy/Desktop/node-gruppuppgift-2/routes/blockchainRoute.mjs:28:5
+    at Layer.handle [as handle_request] (/Users/sabatimothy/Desktop/node-gruppuppgift-2/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/sabatimothy/Desktop/node-gruppuppgift-2/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/Users/sabatimothy/Desktop/node-gruppuppgift-2/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/Users/sabatimothy/Desktop/node-gruppuppgift-2/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/sabatimothy/Desktop/node-gruppuppgift-2/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/sabatimothy/Desktop/node-gruppuppgift-2/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/sabatimothy/Desktop/node-gruppuppgift-2/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/Users/sabatimothy/Desktop/node-gruppuppgift-2/node_modules/express/lib/router/index.js:421:3)

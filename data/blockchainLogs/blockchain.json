@@ -1,161 +1,18 @@
 [
     {
-        "timestamp": 1722885278292,
+        "timestamp": 1722894954952,
         "blockIndex": 0,
         "previousBlockHash": "0",
         "currentBlockHash": "89eb0ac031a63d2421cd05a2fbe41f3ea35f5c3712ca839cbf6b85c4ee07b7a3",
         "data": "Genesis Block"
     },
     {
-        "timestamp": 1722885328579,
+        "timestamp": 1722894954952,
         "blockIndex": 1,
         "previousBlockHash": "89eb0ac031a63d2421cd05a2fbe41f3ea35f5c3712ca839cbf6b85c4ee07b7a3",
-        "currentBlockHash": "85e864010388951df7afe36e826b1be27db9255c4a34bf1fa2a4de8a65c26900",
-        "data": [
-            {
-                "sender": "Sarah",
-                "recipient": "Saba",
-                "amount": 1000000
-            }
-        ]
-    },
-    {
-        "timestamp": 1722885884408,
-        "blockIndex": 2,
-        "previousBlockHash": "85e864010388951df7afe36e826b1be27db9255c4a34bf1fa2a4de8a65c26900",
-        "currentBlockHash": "c4b15cbf45dcb9885f542f564821dac4b7cdcedfdb993e45861dba63eb158ce1",
-        "data": [
-            {
-                "sender": "Ten",
-                "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Mamma",
-                "recipient": "Saba",
-                "amount": 1000000
-            }
-        ]
-    },
-    {
-        "timestamp": 1722890959633,
-        "blockIndex": 3,
-        "previousBlockHash": "c4b15cbf45dcb9885f542f564821dac4b7cdcedfdb993e45861dba63eb158ce1",
-        "currentBlockHash": "41400076ab06f9e1697e281950b4ccf9489730c8267196382cb51964e30fb780",
-        "data": [
-            {
-                "sender": "Pappa",
-                "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Shan",
-                "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Reema",
-                "recipient": "Saba",
-                "amount": 1000000
-            }
-        ]
-    },
-    {
-        "timestamp": 1722891258631,
-        "blockIndex": 4,
-        "previousBlockHash": "41400076ab06f9e1697e281950b4ccf9489730c8267196382cb51964e30fb780",
-        "currentBlockHash": "fb5d1933873b0d83e0947e5adf045e153923128658233dfae641b7b647d08aef",
-        "data": [
-            {
-                "sender": "Andrew",
-                "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Julia",
-                "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Raja",
-                "recipient": "Saba",
-                "amount": 1000000
-            }
-        ]
-    },
-    {
-        "timestamp": 1722892509497,
-        "blockIndex": 5,
-        "previousBlockHash": "fb5d1933873b0d83e0947e5adf045e153923128658233dfae641b7b647d08aef",
-        "currentBlockHash": "a47bd77fa204f4547b018f50e8b4b0674ed4683a3f9ab6c54410fbaaa24aa52a",
-        "data": [
-            {
-                "sender": "Nisha",
-                "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Nadab",
-                "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Naayir",
-                "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Jane",
-                "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Noel",
-                "recipient": "Saba",
-                "amount": 1000000
-            }
-        ]
-    },
-    {
-        "timestamp": 1722892533406,
-        "blockIndex": 6,
-        "previousBlockHash": "a47bd77fa204f4547b018f50e8b4b0674ed4683a3f9ab6c54410fbaaa24aa52a",
-        "currentBlockHash": "380ba9c84088389428602c2f962b611a6c09bed2a0c1c9aac111a7dfea559a4a",
-        "data": "peperoni-pizza"
-    },
-    {
-        "timestamp": 1722894295348,
-        "blockIndex": 7,
-        "previousBlockHash": "380ba9c84088389428602c2f962b611a6c09bed2a0c1c9aac111a7dfea559a4a",
-        "currentBlockHash": "50c79dd12d89087b3bf7768805d485d4d3a838aa5ad2b7d0144f3ec7af7c0a63",
-        "data": [
-            {
-                "sender": "Veena",
-                "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Vinod",
-                "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Joyce",
-                "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Anil",
-                "recipient": "Saba",
-                "amount": 1000000
-            }
-        ]
-    },
-    {
-        "timestamp": 1722894331649,
-        "blockIndex": 8,
-        "previousBlockHash": "50c79dd12d89087b3bf7768805d485d4d3a838aa5ad2b7d0144f3ec7af7c0a63",
-        "currentBlockHash": "bd204e6724f9abdda604db27b11697468bab019a27e09961029e042ded8ab8ed",
-        "data": "peperoni-pizza"
+        "currentBlockHash": "2ef0e1a8934e4539f0afef1d4a7f34d8afed8a970747ab64f98258073bc099ae",
+        "data": {
+            "amount": 4
+        }
     }
 ]
