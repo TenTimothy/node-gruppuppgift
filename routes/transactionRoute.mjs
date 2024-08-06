@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import { addTransaction, minePendingTransactions } from '../controllers/transactionController.mjs'; 
+import { addTransaction, minePendingTransactions } from '../controllers/transactionController.mjs';
+
 const router = Router();
 
 router.post('/', (req, res) => {

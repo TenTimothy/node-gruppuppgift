@@ -1,6 +1,6 @@
 import express from 'express';
 import blockchainRouter from './routes/blockchainRoute.mjs';
-import transactionRouter from './routes/transactionRoute.mjs'; // Se till att du importerar rätt router
+import transactionRouter from './routes/transactionRoute.mjs'; 
 import Blockchain from './models/Blockchain.mjs';
 import { errorHandler } from './middlewares/errorHandler.mjs';
 
@@ -20,7 +20,7 @@ app.use('/api/v1/blockchain', (req, res, next) => {
 app.use('/api/v1/transactions', (req, res, next) => {
     console.log(`Received request for /api/v1/transactions`);
     next();
-}, transactionRouter); 
+}, transactionRouter);
 
 app.all('*', (req, res) => {
     console.log(`Unhandled request: ${req.method} ${req.originalUrl}`);
