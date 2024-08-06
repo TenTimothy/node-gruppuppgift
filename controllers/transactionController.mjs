@@ -1,7 +1,7 @@
 import Transaction from '../models/Transaction.mjs';
 
 export const addTransaction = (req, res, next) => {
-    console.log('Handling POST /api/v1/blockchain/transactions');
+    console.log('Handling POST /api/v1/transactions');
     const { sender, recipient, amount } = req.body;
 
     if (!sender || !recipient || !amount) {
@@ -20,4 +20,17 @@ export const addTransaction = (req, res, next) => {
         success: true,
         data: transaction
     });
+};
+
+export const minePendingTransactions = (req, res, next) => {
+    console.log('Handling POST /api/v1/transactions/mine-transactions');
+    try {
+        const newBlock = global.blockchain.minePendingTransactions();
+        res.status(201).json({
+            success: true,
+            data: newBlock
+        });
+    } catch (error) {
+        return next(error);
+    }
 };
