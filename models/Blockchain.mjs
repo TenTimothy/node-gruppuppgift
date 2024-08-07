@@ -12,6 +12,7 @@ export default class Blockchain {
     constructor(chain = []) {
         this.chain = chain.length ? chain : [this.createGenesisBlock()];
         this.pendingTransactions = [];
+        this.difficulty = 1; 
     }
 
     createGenesisBlock() {
@@ -26,13 +27,20 @@ export default class Blockchain {
         const previousBlock = this.getLastBlock();
         const newBlockIndex = previousBlock.blockIndex + 1;
         const newBlockTimestamp = Date.now();
-        const newBlockHash = createHash(newBlockTimestamp + previousBlock.currentBlockHash + JSON.stringify(data));
-        const newBlock = new Block(newBlockTimestamp, newBlockIndex, previousBlock.currentBlockHash, newBlockHash, data);
+        let nonce = 0;
+        const difficulty = this.difficulty;
+        let newBlockHash;
+
+        do {
+            nonce++;
+            newBlockHash = createHash(newBlockTimestamp + previousBlock.currentBlockHash + JSON.stringify(data) + nonce);
+        } while (!newBlockHash.startsWith('0'.repeat(difficulty)));
+
+        const newBlock = new Block(newBlockTimestamp, newBlockIndex, previousBlock.currentBlockHash, newBlockHash, data, nonce, difficulty);
         this.chain.push(newBlock);
         this.saveBlockchain();
         return newBlock;
     }
-    
 
     getChain() {
         return this.chain;
@@ -46,8 +54,16 @@ export default class Blockchain {
         const previousBlock = this.getLastBlock();
         const newBlockIndex = previousBlock.blockIndex + 1;
         const newBlockTimestamp = Date.now();
-        const newBlockHash = createHash(newBlockTimestamp + previousBlock.currentBlockHash + JSON.stringify(this.pendingTransactions));
-        const newBlock = new Block(newBlockTimestamp, newBlockIndex, previousBlock.currentBlockHash, newBlockHash, this.pendingTransactions);
+        let nonce = 0;
+        const difficulty = this.difficulty;
+        let newBlockHash;
+
+        do {
+            nonce++;
+            newBlockHash = createHash(newBlockTimestamp + previousBlock.currentBlockHash + JSON.stringify(this.pendingTransactions) + nonce);
+        } while (!newBlockHash.startsWith('0'.repeat(difficulty)));
+
+        const newBlock = new Block(newBlockTimestamp, newBlockIndex, previousBlock.currentBlockHash, newBlockHash, this.pendingTransactions, nonce, difficulty);
         this.chain.push(newBlock);
         this.pendingTransactions = [];
         this.saveBlockchain();
@@ -66,7 +82,7 @@ export default class Blockchain {
             console.log('Invalid previous block hash:', block.previousBlockHash);
             return false;
         }
-        const recalculatedHash = createHash(block.timestamp + block.previousBlockHash + JSON.stringify(block.data));
+        const recalculatedHash = createHash(block.timestamp + block.previousBlockHash + JSON.stringify(block.data) + block.nonce);
         if (recalculatedHash !== block.currentBlockHash) {
             console.log('Invalid block hash:', recalculatedHash);
             return false;

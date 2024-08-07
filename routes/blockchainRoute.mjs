@@ -3,19 +3,8 @@ import { getBlockchain, getBlockByIndex, validateBlockchain } from '../controlle
 
 const router = Router();
 
-router.get('/', (req, res) => {
-    console.log('GET request received at /api/v1/blockchain');
-    getBlockchain(req, res);
-});
-
-router.get('/validate', (req, res) => {
-    console.log('GET request received at /api/v1/blockchain/validate');
-    validateBlockchain(req, res);
-});
-
-router.get('/:index', (req, res) => {
-    console.log('GET request received at /api/v1/blockchain/:index');
-    getBlockByIndex(req, res);
-});
+router.get('/', getBlockchain);
+router.get('/validate', validateBlockchain);
+router.get('/:index', getBlockByIndex);
 
 export default router;

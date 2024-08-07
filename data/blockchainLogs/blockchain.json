@@ -1,168 +1,151 @@
 [
     {
-        "timestamp": 1722895137638,
+        "timestamp": 1723062428222,
         "blockIndex": 0,
         "previousBlockHash": "0",
         "currentBlockHash": "89eb0ac031a63d2421cd05a2fbe41f3ea35f5c3712ca839cbf6b85c4ee07b7a3",
-        "data": "Genesis Block"
+        "data": "Genesis Block",
+        "nonce": 0,
+        "difficulty": 1
     },
     {
-        "timestamp": 1722895137638,
+        "timestamp": 1723062442068,
         "blockIndex": 1,
         "previousBlockHash": "89eb0ac031a63d2421cd05a2fbe41f3ea35f5c3712ca839cbf6b85c4ee07b7a3",
-        "currentBlockHash": "128823a4d107d6eb0d49669bddb4c5ecfc0efc2ea5f989e0e48935c586b4f81d",
-        "data": {
-            "amount": 4
-        }
-    },
-    {
-        "timestamp": 1722895391965,
-        "blockIndex": 2,
-        "previousBlockHash": "128823a4d107d6eb0d49669bddb4c5ecfc0efc2ea5f989e0e48935c586b4f81d",
-        "currentBlockHash": "39786d64865cb9731bd8dd304f7431f74986ffe45cedad74a8c6ad95967cd41e",
-        "data": [
-            {
-                "sender": "Augustin",
-                "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Edna",
-                "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Angela",
-                "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Gabriel",
-                "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Jennifer",
-                "recipient": "Saba",
-                "amount": 1000000
-            }
-        ]
-    },
-    {
-        "timestamp": 1722895488476,
-        "blockIndex": 3,
-        "previousBlockHash": "39786d64865cb9731bd8dd304f7431f74986ffe45cedad74a8c6ad95967cd41e",
-        "currentBlockHash": "cebcc2bbb5fe47d91c7ec7771219a8f6d7f3291b0a511a55f9ad641056e7e6b2",
-        "data": "peperoni-pizza"
-    },
-    {
-        "timestamp": 1722895543682,
-        "blockIndex": 4,
-        "previousBlockHash": "cebcc2bbb5fe47d91c7ec7771219a8f6d7f3291b0a511a55f9ad641056e7e6b2",
-        "currentBlockHash": "46a92b9d2e046e5c17394b1a0473efa30de51423079da014e91b2916136b5ebf",
+        "currentBlockHash": "0da5930c7e159c3e8f15226e6af001988d69e0591659115b8988d25d9214f53a",
         "data": [
             {
                 "sender": "Ten",
                 "recipient": "Saba",
-                "amount": 1000000
+                "amount": 5000000
             },
             {
                 "sender": "Sarah",
                 "recipient": "Saba",
-                "amount": 1000000
-            },
+                "amount": 5000000
+            }
+        ],
+        "nonce": 25,
+        "difficulty": 1
+    },
+    {
+        "timestamp": 1723062463821,
+        "blockIndex": 2,
+        "previousBlockHash": "0da5930c7e159c3e8f15226e6af001988d69e0591659115b8988d25d9214f53a",
+        "currentBlockHash": "0f3a97d3fd195c17bf69ceb74d2db9ee0bf533e55238cc07ff29fd020f64430c",
+        "data": [
             {
                 "sender": "Levi",
                 "recipient": "Saba",
-                "amount": 1000000
+                "amount": 5000000
             },
             {
                 "sender": "Queenie",
                 "recipient": "Saba",
-                "amount": 1000000
+                "amount": 5000000
             },
             {
                 "sender": "Sky",
                 "recipient": "Saba",
-                "amount": 1000000
+                "amount": 5000000
             }
-        ]
+        ],
+        "nonce": 3,
+        "difficulty": 1
     },
     {
-        "timestamp": 1722944118011,
-        "blockIndex": 5,
-        "previousBlockHash": "46a92b9d2e046e5c17394b1a0473efa30de51423079da014e91b2916136b5ebf",
-        "currentBlockHash": "815949778ad1feae89ddd360642e70f91b97c6b95a7dc7a3a3547cd750794a57",
+        "timestamp": 1723062484902,
+        "blockIndex": 3,
+        "previousBlockHash": "0f3a97d3fd195c17bf69ceb74d2db9ee0bf533e55238cc07ff29fd020f64430c",
+        "currentBlockHash": "0f92d2401e3908ee862ce2e50252184a68555f7ebe3bb64cc97886d5831e2cad",
         "data": [
             {
                 "sender": "Mamma",
                 "recipient": "Saba",
-                "amount": 1000000
+                "amount": 5000000
             },
             {
                 "sender": "Pappa",
                 "recipient": "Saba",
-                "amount": 1000000
+                "amount": 5000000
             },
             {
                 "sender": "Shan",
                 "recipient": "Saba",
-                "amount": 1000000
+                "amount": 5000000
             }
-        ]
+        ],
+        "nonce": 24,
+        "difficulty": 1
     },
     {
-        "timestamp": 1722945645195,
+        "timestamp": 1723062498167,
+        "blockIndex": 4,
+        "previousBlockHash": "0f92d2401e3908ee862ce2e50252184a68555f7ebe3bb64cc97886d5831e2cad",
+        "currentBlockHash": "0721905d773519072b63ff373a79cb4cd093ac7043e145aecabf97aa536a2b56",
+        "data": [
+            {
+                "sender": "Reema",
+                "recipient": "Saba",
+                "amount": 5000000
+            },
+            {
+                "sender": "Andrew",
+                "recipient": "Saba",
+                "amount": 5000000
+            }
+        ],
+        "nonce": 4,
+        "difficulty": 1
+    },
+    {
+        "timestamp": 1723062755696,
+        "blockIndex": 5,
+        "previousBlockHash": "0721905d773519072b63ff373a79cb4cd093ac7043e145aecabf97aa536a2b56",
+        "currentBlockHash": "02c78c32dc475c2b83adcfacad1e4aa877336ab5d99b995f419b932f058e94a3",
+        "data": [
+            {
+                "sender": "Joakim",
+                "recipient": "Saba",
+                "amount": 5000000
+            },
+            {
+                "sender": "Malin",
+                "recipient": "Saba",
+                "amount": 5000000
+            },
+            {
+                "sender": "Ida",
+                "recipient": "Saba",
+                "amount": 5000000
+            },
+            {
+                "sender": "Andy",
+                "recipient": "Saba",
+                "amount": 5000000
+            },
+            {
+                "sender": "Emma",
+                "recipient": "Saba",
+                "amount": 5000000
+            }
+        ],
+        "nonce": 5,
+        "difficulty": 1
+    },
+    {
+        "timestamp": 1723063006519,
         "blockIndex": 6,
-        "previousBlockHash": "815949778ad1feae89ddd360642e70f91b97c6b95a7dc7a3a3547cd750794a57",
-        "currentBlockHash": "d2a43272fcb2c2ad60a33f4d3cd82f40eaecbbe26c92387883ddf83863aca577",
+        "previousBlockHash": "02c78c32dc475c2b83adcfacad1e4aa877336ab5d99b995f419b932f058e94a3",
+        "currentBlockHash": "0295ab4e03f13e7226b22c29263688b941e526a830e001e18cf7847963eb5f1b",
         "data": [
             {
                 "sender": "Test",
                 "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Simon",
-                "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Maja",
-                "recipient": "Saba",
-                "amount": 1000000
+                "amount": 5000000
             }
-        ]
-    },
-    {
-        "timestamp": 1722945785535,
-        "blockIndex": 7,
-        "previousBlockHash": "d2a43272fcb2c2ad60a33f4d3cd82f40eaecbbe26c92387883ddf83863aca577",
-        "currentBlockHash": "13268a6306f91b3cb92a4731ca90c5e6e975f50c37e0cfd7dd97080514810858",
-        "data": [
-            {
-                "sender": "Rowel",
-                "recipient": "Saba",
-                "amount": 1000000
-            },
-            {
-                "sender": "Mayo",
-                "recipient": "Saba",
-                "amount": 1000000
-            }
-        ]
-    },
-    {
-        "timestamp": 1722946040323,
-        "blockIndex": 8,
-        "previousBlockHash": "13268a6306f91b3cb92a4731ca90c5e6e975f50c37e0cfd7dd97080514810858",
-        "currentBlockHash": "ce78d8d9690d2907f2ff09b026c927a6573d9520333679842c2dc7024030a566",
-        "data": [
-            {
-                "sender": "Test2",
-                "recipient": "Saba",
-                "amount": 1000000
-            }
-        ]
+        ],
+        "nonce": 11,
+        "difficulty": 1
     }
 ]
